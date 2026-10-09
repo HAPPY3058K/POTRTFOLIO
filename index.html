@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajveer Rose — Portfolio | B.Tech CSE</title>
+  <meta name="description" content="Portfolio of Rajveer Rose, Year 1 B.Tech CSE student at JECRC University, Jaipur. Interactive web experiences, 3D visualization, and creative development.">
+  
+  <!-- Google Fonts: Anton & DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+  <!-- Relative stylesheet link -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Preloader Screen (Counter 0 to 100) -->
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-tag">SPEC // RR-PORTFOLIO // DROP 01</div>
+      <div class="preloader-counter-wrap">
+        <span id="preloader-counter">0</span>
+        <span class="preloader-percent">%</span>
+      </div>
+      <div class="preloader-bar-wrap">
+        <div id="preloader-bar" class="preloader-bar"></div>
+      </div>
+      <div class="preloader-status">INITIALIZING ASSETS &amp; 3D ENVIRONMENT...</div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor Elements (Desktop only) -->
+  <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-bubble" class="cursor-bubble" aria-hidden="true">
+    <span id="cursor-text" class="cursor-text"></span>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress-bar" class="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- Primary Navigation -->
+  <header id="site-header" class="site-header">
+    <div class="nav-container">
+      <a href="#home" class="brand-logo" data-cursor="RR">
+        <span class="brand-mark">RR</span>
+        <span class="brand-sub">Y1 CSE // S01</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav id="desktop-nav" class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link" data-cursor="HOME">Home</a></li>
+          <li><a href="#about" class="nav-link" data-cursor="ABOUT">About Me</a></li>
+          <li><a href="#education" class="nav-link" data-cursor="STUDY">Education</a></li>
+          <li><a href="#skills" class="nav-link" data-cursor="SKILLS">Skills</a></li>
+          <li><a href="#projects" class="nav-link" data-cursor="DROPS">Projects</a></li>
+          <li><a href="#achievements" class="nav-link" data-cursor="AWARDS">Achievements</a></li>
+          <li><a href="#contact" class="nav-link" data-cursor="CONTACT">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Social Links (GitHub and LinkedIn required in nav) -->
+      <div class="nav-socials">
+        <a href="https://github.com/HAPPY3058K" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Rajveer Rose GitHub Profile" data-cursor="GITHUB">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span class="nav-social-text">GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/rajveer-rose-124809412" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Rajveer Rose LinkedIn Profile" data-cursor="LINKEDIN">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+          <span class="nav-social-text">LinkedIn</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" data-cursor="MENU">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-nav-drawer" class="mobile-nav-drawer" aria-hidden="true">
+      <div class="mobile-nav-inner">
+        <div class="mobile-nav-meta">
+          <span>SPEC: SNEAKER-DROP PORTFOLIO</span>
+          <span>RAJVEER ROSE // 2026</span>
+        </div>
+        <ul class="mobile-nav-list">
+          <li><a href="#home" class="mobile-nav-link">01. Home</a></li>
+          <li><a href="#about" class="mobile-nav-link">02. About Me</a></li>
+          <li><a href="#education" class="mobile-nav-link">03. Education</a></li>
+          <li><a href="#skills" class="mobile-nav-link">04. Skills</a></li>
+          <li><a href="#projects" class="mobile-nav-link">05. Projects</a></li>
+          <li><a href="#achievements" class="mobile-nav-link">06. Certifications / Achievements</a></li>
+          <li><a href="#contact" class="mobile-nav-link">07. Contact</a></li>
+        </ul>
+        <div class="mobile-drawer-socials">
+          <a href="https://github.com/HAPPY3058K" target="_blank" rel="noopener noreferrer" class="mobile-social-link">
+            <span>GitHub Profile</span>
+            <span>&rarr;</span>
+          </a>
+          <a href="https://www.linkedin.com/in/rajveer-rose-124809412" target="_blank" rel="noopener noreferrer" class="mobile-social-link">
+            <span>LinkedIn Profile</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. HOME SECTION -->
+    <section id="home" class="hero-section">
+      <div class="hero-bg-grid" aria-hidden="true"></div>
+      
+      <div class="hero-container">
+        <!-- Hero Left Column: Headline, Bio, Buttons -->
+        <div class="hero-text-col">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>DROP 01 // B.TECH CSE SEMESTER 1 // JAIPUR</span>
+          </div>
+
+          <!-- Hero Headline with Masked Line-by-Line Reveal -->
+          <h1 class="hero-headline">
+            <span class="mask-line"><span class="reveal-inner">JUST</span></span>
+            <span class="mask-line"><span class="reveal-inner highlight-orange">SHIP</span></span>
+            <span class="mask-line"><span class="reveal-inner">IT.</span></span>
+          </h1>
+
+          <p class="hero-intro">
+            I'm <strong class="text-glow">Rajveer Rose</strong>, Year 1 B.Tech CSE student at JECRC University, Jaipur. Building creative web experiences, interactive 3D visualizations, and modern digital interfaces.
+          </p>
+
+          <!-- Rotating "I build ..." line (typewriter effect) -->
+          <p class="hero-typed" aria-live="off">
+            <span class="typed-label">I BUILD</span>
+            <span id="typed-text" class="typed-text">interactive web experiences</span><span class="typed-cursor" aria-hidden="true"></span>
+          </p>
+
+          <!-- Magnetic Action Buttons -->
+          <div class="hero-actions">
+            <a href="#projects" class="btn-snkrs btn-primary btn-magnetic" data-cursor="VIEW">
+              <span class="btn-text">See my work</span>
+              <span class="btn-arrow">&darr;</span>
+            </a>
+            <a href="#contact" class="btn-snkrs btn-outline btn-magnetic" data-cursor="TALK">
+              <span class="btn-text">Contact</span>
+              <span class="btn-arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="hero-spec-tag">
+            <span>SKU: RR-2026-CSE</span>
+            <span>STATUS: FIRST RELEASE</span>
+            <span>EDITION: 1 OF 1</span>
+          </div>
+        </div>
+
+        <!-- Hero Right Column: Pure-CSS 3D Spinning Shoebox with Retro Stripes -->
+        <div class="hero-shoebox-col">
+          <div class="shoebox-scene" id="shoebox-scene">
+            <div class="shoebox-badge-top">MODEL: RETRO RUNNER BOX // CSE-01</div>
+            <div class="shoebox-tilt" id="shoebox-tilt">
+              <div class="shoebox-wrap" id="shoebox">
+                <!-- Lid of the shoebox -->
+                <div class="box-lid">
+                  <div class="lid-face lid-top">
+                    <div class="lid-graphics">
+                      <div class="lid-brand">RR // 2026</div>
+                      <div class="retro-stripes">
+                        <div class="stripe stripe-orange"></div>
+                        <div class="stripe stripe-mustard"></div>
+                        <div class="stripe stripe-brown"></div>
+                        <div class="stripe stripe-teal"></div>
+                      </div>
+                      <div class="lid-slogan">JUST SHIP IT.</div>
+                    </div>
+                  </div>
+                  <div class="lid-face lid-rim-front"></div>
+                  <div class="lid-face lid-rim-back"></div>
+                  <div class="lid-face lid-rim-left"></div>
+                  <div class="lid-face lid-rim-right"></div>
+                </div>
+
+                <!-- Main Shoebox Body -->
+                <div class="box-body">
+                  <div class="box-face face-front">
+                    <div class="box-content">
+                      <span class="box-tag">JECRC // CSE Y1</span>
+                      <span class="box-title">RAJVEER ROSE</span>
+                      <span class="box-edition">SPEC: S01 DIGITAL DATA</span>
+                    </div>
+                  </div>
+                  <div class="box-face face-back">
+                    <div class="box-content">
+                      <span class="box-tag">ORIGINAL SPEC</span>
+                      <span class="box-title">JUST SHIP IT</span>
+                    </div>
+                  </div>
+                  <div class="box-face face-left">
+                    <div class="shoebox-label-sticker">
+                      <div class="sticker-header">AIR ROSE 01</div>
+                      <div class="sticker-row"><span>COLOR:</span> <span>MATTE / INFRARED</span></div>
+                      <div class="sticker-row"><span>SIZE:</span> <span>YEAR 1 CSE</span></div>
+                      <div class="sticker-barcode">
+                        <span>||| || |||| | ||| ||||| ||| |||</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="box-face face-right">
+                    <div class="box-content">
+                      <div class="retro-stripes-vertical">
+                        <div class="stripe stripe-orange"></div>
+                        <div class="stripe stripe-mustard"></div>
+                        <div class="stripe stripe-brown"></div>
+                        <div class="stripe stripe-teal"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="box-face face-bottom"></div>
+                </div>
+
+                <!-- Floor Drop Shadow -->
+                <div class="shoebox-shadow"></div>
+              </div>
+            </div>
+            <div class="shoebox-hint">
+              <span class="hint-pulse"></span>
+              <span>Interactive 3D: move your cursor to tilt, click the box for confetti</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Speed-Reactive Ticker Strip -->
+    <div class="ticker-wrapper" aria-hidden="true">
+      <div id="ticker-track" class="ticker-track">
+        <div class="ticker-content">
+          <span>✦ RAJVEER ROSE</span>
+          <span>✦ B.TECH CSE YEAR 1</span>
+          <span>✦ JECRC UNIVERSITY JAIPUR</span>
+          <span>✦ DIGITAL DATA &amp; AI LITERACY</span>
+          <span>✦ INTERACTIVE WEB EXPERIENCES</span>
+          <span>✦ 3D VISUALIZATION</span>
+          <span>✦ AGRITECH IDEAS</span>
+          <span>✦ AI TOOLS</span>
+          <span>✦ JUST SHIP IT</span>
+        </div>
+        <div class="ticker-content">
+          <span>✦ RAJVEER ROSE</span>
+          <span>✦ B.TECH CSE YEAR 1</span>
+          <span>✦ JECRC UNIVERSITY JAIPUR</span>
+          <span>✦ DIGITAL DATA &amp; AI LITERACY</span>
+          <span>✦ INTERACTIVE WEB EXPERIENCES</span>
+          <span>✦ 3D VISUALIZATION</span>
+          <span>✦ AGRITECH IDEAS</span>
+          <span>✦ AI TOOLS</span>
+          <span>✦ JUST SHIP IT</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. ABOUT ME SECTION -->
+    <section id="about" class="about-section">
+      <div class="section-container">
+        <div class="section-header-row">
+          <div class="section-tag">02 // PROFILE</div>
+          <h2 class="section-title">About Me</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-lead-col">
+            <span class="drop-label">DROP MANIFESTO</span>
+            <!-- About paragraph that lights up word by word as you scroll -->
+            <p id="about-lightup-text" class="about-lightup-text">
+              I am Rajveer Rose, currently pursuing B.Tech Computer Science and Engineering, Year 1, Semester 1 at JECRC University, Jaipur, with coursework in Digital Data &amp; AI Literacy. My genuine interests center around interactive web design, 3D visualization, AgriTech ideas, and AI tools. My goal is to grow into a developer who builds creative web experiences, join hackathons and tech clubs, and secure impactful internships.
+            </p>
+
+            <div class="about-meta-cards">
+              <div class="meta-card">
+                <span class="meta-key">CURRENT DEGREE</span>
+                <span class="meta-val">B.Tech CSE, Year 1</span>
+              </div>
+              <div class="meta-card">
+                <span class="meta-key">INSTITUTION</span>
+                <span class="meta-val">JECRC University, Jaipur</span>
+              </div>
+              <div class="meta-card">
+                <span class="meta-key">CORE COURSEWORK</span>
+                <span class="meta-val">Digital Data &amp; AI Literacy</span>
+              </div>
+              <div class="meta-card">
+                <span class="meta-key">AMBITIONS</span>
+                <span class="meta-val">Hackathons &bull; Tech Clubs &bull; Internships</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Journey Timeline with scroll-drawn line -->
+          <div class="journey-col">
+            <div class="journey-header">
+              <span class="journey-tag">RELEASE TIMELINE</span>
+              <h3 class="journey-title">THE JOURNEY</h3>
+            </div>
+
+            <div class="timeline-container" id="timeline-container">
+              <!-- Animated SVG / Drawing line -->
+              <div class="timeline-line-track">
+                <div id="timeline-line-fill" class="timeline-line-fill"></div>
+              </div>
+
+              <div class="timeline-step" data-step="1">
+                <div class="step-node"><span class="node-dot"></span></div>
+                <div class="step-content">
+                  <span class="step-phase">CHECKPOINT 01</span>
+                  <h4 class="step-heading">Started B.Tech CSE</h4>
+                  <p class="step-desc">Enrolled in Year 1, Semester 1 at JECRC University, Jaipur. Immersed in foundational computer science and Digital Data &amp; AI Literacy.</p>
+                </div>
+              </div>
+
+              <div class="timeline-step" data-step="2">
+                <div class="step-node"><span class="node-dot"></span></div>
+                <div class="step-content">
+                  <span class="step-phase">CHECKPOINT 02</span>
+                  <h4 class="step-heading">Built Food World 3D</h4>
+                  <p class="step-desc">Engineered an interactive 3D web visualization focusing on food resource improvement, smart irrigation, AgriTech, and supply chain logistics.</p>
+                </div>
+              </div>
+
+              <div class="timeline-step" data-step="3">
+                <div class="step-node"><span class="node-dot"></span></div>
+                <div class="step-content">
+                  <span class="step-phase">CHECKPOINT 03</span>
+                  <h4 class="step-heading">Built the Editor UI Clone</h4>
+                  <p class="step-desc">Crafted a responsive VS Code-style editor UI clone featuring a custom accent color using vanilla HTML, CSS, and JavaScript.</p>
+                </div>
+              </div>
+
+              <div class="timeline-step" data-step="4">
+                <div class="step-node"><span class="node-dot"></span></div>
+                <div class="step-content">
+                  <span class="step-phase">CHECKPOINT 04</span>
+                  <h4 class="step-heading">Shipped This Portfolio</h4>
+                  <p class="step-desc">Designed and deployed my first personal portfolio website with AI assistance, hosted directly on GitHub and deployed on Vercel.</p>
+                </div>
+              </div>
+
+              <div class="timeline-step" data-step="5">
+                <div class="step-node coming-soon"><span class="node-dot"></span></div>
+                <div class="step-content">
+                  <span class="step-phase highlight-mustard">NEXT DROP</span>
+                  <h4 class="step-heading">Semester 2 (Coming Soon)</h4>
+                  <p class="step-desc">Leveling up with deeper data structures, advanced JavaScript, hackathons, and innovative web drops.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. EDUCATION SECTION (Exact Title: "Education") -->
+    <section id="education" class="education-section">
+      <div class="section-container">
+        <div class="section-header-row">
+          <div class="section-tag">03 // ACADEMICS</div>
+          <h2 class="section-title">Education</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="education-card-box">
+          <div class="edu-stamp">YEAR 1 ENROLLED</div>
+          <div class="edu-main-grid">
+            <div class="edu-primary">
+              <span class="edu-badge">UNDERGRADUATE PROGRAMME</span>
+              <h3 class="edu-degree">B.Tech Computer Science and Engineering</h3>
+              <div class="edu-univ-row">
+                <span class="edu-univ">JECRC University, Jaipur</span>
+                <span class="edu-period">Year 1 &bull; Semester 1</span>
+              </div>
+            </div>
+
+            <div class="edu-details-list">
+              <div class="edu-detail-item">
+                <span class="detail-label">ACTIVE COURSEWORK</span>
+                <span class="detail-val highlight-orange">Digital Data &amp; AI Literacy</span>
+              </div>
+              <div class="edu-detail-item">
+                <span class="detail-label">INTERESTS &amp; EXPLORATION</span>
+                <span class="detail-val">Interactive Web Design, 3D Visualization, AgriTech Ideas, AI Tools</span>
+              </div>
+              <div class="edu-detail-item">
+                <span class="detail-label">OBJECTIVES</span>
+                <span class="detail-val">Grow into a developer who builds creative web experiences; join hackathons and tech clubs; get internships</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Count-Up Stats Section -->
+        <div class="stats-grid" id="stats-grid">
+          <div class="stat-card">
+            <div class="stat-num-wrap">
+              <span class="stat-number" data-target="2">0</span>
+            </div>
+            <div class="stat-label">Projects Built</div>
+            <div class="stat-sub">Semester 1 interactive releases</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-num-wrap">
+              <span class="stat-number" data-target="3">0</span>
+            </div>
+            <div class="stat-label">Languages</div>
+            <div class="stat-sub">HTML, CSS, JavaScript</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-num-wrap">
+              <span class="stat-number" data-target="5">0</span>
+            </div>
+            <div class="stat-label">Tools</div>
+            <div class="stat-sub">Git, GitHub, VS Code, Vercel, Antigravity</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-num-wrap">
+              <span class="stat-number" data-target="1">0</span>
+            </div>
+            <div class="stat-label">Year</div>
+            <div class="stat-sub">B.Tech CSE at JECRC University</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SKILLS SECTION -->
+    <section id="skills" class="skills-section">
+      <div class="section-container">
+        <div class="section-header-row">
+          <div class="section-tag">04 // TECH STACK</div>
+          <h2 class="section-title">Skills</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="skills-spec-sheet">
+          <div class="spec-header-bar">
+            <span>SKU</span>
+            <span>CAPABILITY</span>
+            <span>CATEGORY</span>
+            <span>STATUS</span>
+          </div>
+
+          <!-- Skill rows with color wipe on hover -->
+          <div class="skill-row" data-wipe="orange" data-cursor="CORE">
+            <span class="skill-sku">01 // CODE</span>
+            <span class="skill-name">HTML</span>
+            <span class="skill-category">Core Language</span>
+            <span class="skill-status"><span class="status-indicator active"></span>Growing</span>
+          </div>
+
+          <div class="skill-row" data-wipe="mustard" data-cursor="STYLE">
+            <span class="skill-sku">02 // STYLE</span>
+            <span class="skill-name">CSS</span>
+            <span class="skill-category">Core Language</span>
+            <span class="skill-status"><span class="status-indicator active"></span>Growing</span>
+          </div>
+
+          <div class="skill-row" data-wipe="teal" data-cursor="LOGIC">
+            <span class="skill-sku">03 // SCRIPT</span>
+            <span class="skill-name">JavaScript</span>
+            <span class="skill-category">Core Language</span>
+            <span class="skill-status"><span class="status-indicator active"></span>Growing</span>
+          </div>
+
+          <div class="skill-row" data-wipe="orange" data-cursor="VCS">
+            <span class="skill-sku">04 // TOOL</span>
+            <span class="skill-name">Git &amp; GitHub</span>
+            <span class="skill-category">Developer Tooling</span>
+            <span class="skill-status"><span class="status-indicator active"></span>Beginner</span>
+          </div>
+
+          <div class="skill-row" data-wipe="mustard" data-cursor="IDE">
+            <span class="skill-sku">05 // TOOL</span>
+            <span class="skill-name">VS Code</span>
+            <span class="skill-category">Editor &amp; Environment</span>
+            <span class="skill-status"><span class="status-indicator active"></span>Growing</span>
+          </div>
+
+          <div class="skill-row" data-wipe="teal" data-cursor="DEPLOY">
+            <span class="skill-sku">06 // TOOL</span>
+            <span class="skill-name">Vercel</span>
+            <span class="skill-category">Cloud Deployment</span>
+            <span class="skill-status"><span class="status-indicator active"></span>Learning</span>
+          </div>
+
+          <div class="skill-row" data-wipe="orange" data-cursor="AI-PAIR">
+            <span class="skill-sku">07 // TOOL</span>
+            <span class="skill-name">Antigravity</span>
+            <span class="skill-category">AI Engineering Assistant</span>
+            <span class="skill-status"><span class="status-indicator active"></span>Beginner</span>
+          </div>
+
+          <div class="skill-row" data-wipe="mustard" data-cursor="FOCUS">
+            <span class="skill-sku">08 // STRENGTH</span>
+            <span class="skill-name">Responsive Design &amp; Interactive UI</span>
+            <span class="skill-category">Core Strength</span>
+            <span class="skill-status"><span class="status-indicator active"></span>Growing</span>
+          </div>
+
+          <div class="skill-row" data-wipe="teal" data-cursor="FOCUS">
+            <span class="skill-sku">09 // STRENGTH</span>
+            <span class="skill-name">3D Visuals &amp; AI Prompting</span>
+            <span class="skill-category">Core Strength</span>
+            <span class="skill-status"><span class="status-indicator active"></span>Growing</span>
+          </div>
+
+          <div class="skill-row" data-wipe="orange" data-cursor="LEVEL UP">
+            <span class="skill-sku">10 // PROGRESS</span>
+            <span class="skill-name">In Training: More JavaScript, Data Structures, Deploying Sites</span>
+            <span class="skill-category">Continuous Learning</span>
+            <span class="skill-status"><span class="status-indicator training"></span>In Training</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. PROJECTS SECTION (Pinned horizontal-scroll on desktop, swipeable row on mobile) -->
+    <section id="projects" class="projects-section">
+      <div class="projects-section-header">
+        <div class="section-container">
+          <div class="section-header-row">
+            <div class="section-tag">05 // RELEASES</div>
+            <h2 class="section-title">Projects</h2>
+            <div class="section-divider"></div>
+          </div>
+          <p class="projects-guide-note">
+            <span class="desktop-hint">Scroll to navigate the project gallery &rarr;</span>
+            <span class="mobile-hint">Swipe horizontally to view releases &rarr;</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Pinned Horizontal Scroll Container -->
+      <div class="projects-pin-wrap" id="projects-pin-wrap">
+        <div class="projects-sticky">
+        <div class="projects-track" id="projects-track">
+
+          <!-- PROJECT 1: Food World 3D -->
+          <article class="project-card" data-cursor="VIEW DROP">
+            <div class="project-card-header">
+              <span class="card-edition">RELEASE 01 // 2026</span>
+              <span class="card-status active">COMPLETED</span>
+            </div>
+
+            <!-- Inline SVG / Pure CSS Visual (Unmasks on scroll & zooms on hover) -->
+            <div class="project-visual-box">
+              <div class="visual-unmask-container">
+                <svg class="project-svg-visual" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Dark grid background -->
+                  <rect width="400" height="240" fill="#141311"/>
+                  <pattern id="grid-pattern-1" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#25221e" stroke-width="0.8"/>
+                  </pattern>
+                  <rect width="400" height="240" fill="url(#grid-pattern-1)"/>
+
+                  <!-- Isometric 3D Terrain / AgriTech Grid -->
+                  <g transform="translate(200, 130)">
+                    <!-- Isometric ground plane -->
+                    <polygon points="0,-60 130,0 0,60 -130,0" fill="#182320" stroke-width="1.5" style="stroke:var(--teal)"/>
+                    <polygon points="0,-40 90,0 0,40 -90,0" fill="#1b2e29" stroke-width="1" stroke-dasharray="3,3" style="stroke:var(--teal)"/>
+                    
+                    <!-- Smart Irrigation Ripple waves -->
+                    <circle cx="0" cy="0" r="35" fill="none" stroke-width="1.2" opacity="0.8" style="stroke:var(--orange)"/>
+                    <circle cx="0" cy="0" r="60" fill="none" stroke-width="1" stroke-dasharray="4,4" opacity="0.5" style="stroke:var(--orange)"/>
+                    <circle cx="0" cy="0" r="85" fill="none" stroke-width="0.8" opacity="0.3" style="stroke:var(--mustard)"/>
+
+                    <!-- AgriTech Data Nodes / Towers -->
+                    <line x1="-50" y1="-10" x2="-50" y2="-60" stroke-width="2" style="stroke:var(--teal)"/>
+                    <circle cx="-50" cy="-60" r="5" style="fill:var(--orange)"/>
+                    <text x="-50" y="-70" fill="#ece4d3" font-size="9" font-family="'DM Sans', sans-serif" text-anchor="middle">SENSOR_01</text>
+
+                    <line x1="50" y1="10" x2="50" y2="-45" stroke-width="2" style="stroke:var(--teal)"/>
+                    <circle cx="50" cy="-45" r="5" style="fill:var(--mustard)"/>
+                    <text x="50" y="-55" fill="#ece4d3" font-size="9" font-family="'DM Sans', sans-serif" text-anchor="middle">SUPPLY_LOGISTICS</text>
+
+                    <line x1="0" y1="25" x2="0" y2="-80" stroke-width="2" style="stroke:var(--orange)"/>
+                    <circle cx="0" cy="-80" r="7" fill="#ece4d3"/>
+                    <circle cx="0" cy="-80" r="12" fill="none" stroke-width="1.5" style="stroke:var(--orange)"/>
+                    <text x="0" y="-95" font-size="10" font-family="'Anton', sans-serif" letter-spacing="1" text-anchor="middle" style="fill:var(--orange)">FOOD WORLD 3D</text>
+
+                    <!-- Supply chain flow lines -->
+                    <path d="M -50 -10 Q 0 10 50 10" fill="none" stroke-width="2" stroke-dasharray="4,3" style="stroke:var(--mustard)"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">3D Visualization</span>
+                <span class="project-tag">AgriTech</span>
+              </div>
+              <h3 class="project-title">Food World 3D</h3>
+              <p class="project-desc">
+                An interactive 3D visualization exploring food resource improvement, smart irrigation systems, AgriTech principles, and supply chain logistics optimization.
+              </p>
+              <div class="project-footer">
+                <a href="https://github.com/HAPPY3058K" target="_blank" rel="noopener noreferrer" class="btn-project-link" data-cursor="GITHUB">
+                  <span>View on GitHub</span>
+                  <span class="link-arrow">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: VS Code-Style Editor UI Clone -->
+          <article class="project-card" data-cursor="VIEW DROP">
+            <div class="project-card-header">
+              <span class="card-edition">RELEASE 02 // 2026</span>
+              <span class="card-status active">COMPLETED</span>
+            </div>
+
+            <!-- Inline SVG / Pure CSS Visual -->
+            <div class="project-visual-box">
+              <div class="visual-unmask-container">
+                <svg class="project-svg-visual" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Editor Window Background -->
+                  <rect width="400" height="240" fill="#121110"/>
+                  
+                  <!-- Editor Titlebar -->
+                  <rect width="400" height="32" fill="#1b1a18"/>
+                  <circle cx="20" cy="16" r="4.5" style="fill:var(--orange)"/>
+                  <circle cx="36" cy="16" r="4.5" style="fill:var(--mustard)"/>
+                  <circle cx="52" cy="16" r="4.5" style="fill:var(--teal)"/>
+                  <text x="200" y="20" fill="#8d877c" font-size="10" font-family="'DM Sans', monospace" text-anchor="middle">VS Code Clone — rajveer-editor.js</text>
+
+                  <!-- Editor Sidebar -->
+                  <rect x="0" y="32" width="48" height="208" fill="#171614"/>
+                  <rect x="0" y="44" width="4" height="24" style="fill:var(--orange)"/>
+                  <circle cx="24" cy="56" r="8" fill="none" stroke-width="1.5" style="stroke:var(--orange)"/>
+                  <circle cx="24" cy="88" r="8" fill="none" stroke="#8d877c" stroke-width="1.5"/>
+                  <circle cx="24" cy="120" r="8" fill="none" stroke="#8d877c" stroke-width="1.5"/>
+
+                  <!-- File Explorer Pane -->
+                  <rect x="48" y="32" width="90" height="208" fill="#1a1917" stroke="#252320" stroke-width="1"/>
+                  <text x="56" y="52" fill="#8d877c" font-size="9" font-weight="bold" font-family="'DM Sans', sans-serif">EXPLORER</text>
+                  <text x="64" y="74" fill="#ece4d3" font-size="10" font-family="'DM Sans', monospace">&gt; src</text>
+                  <text x="74" y="94" font-size="10" font-family="'DM Sans', monospace" style="fill:var(--orange)">&bull; index.html</text>
+                  <text x="74" y="114" font-size="10" font-family="'DM Sans', monospace" style="fill:var(--teal)">&bull; style.css</text>
+                  <text x="74" y="134" font-size="10" font-family="'DM Sans', monospace" style="fill:var(--mustard)">&bull; editor.js</text>
+
+                  <!-- Code View Area -->
+                  <rect x="138" y="32" width="262" height="208" fill="#0e0d0c"/>
+                  
+                  <!-- Tab bar -->
+                  <rect x="138" y="32" width="110" height="26" fill="#0e0d0c" stroke-width="0" stroke-bottom-width="2" style="stroke:var(--orange)"/>
+                  <line x1="138" y1="58" x2="248" y2="58" stroke-width="2" style="stroke:var(--orange)"/>
+                  <text x="150" y="49" fill="#ece4d3" font-size="10" font-family="'DM Sans', monospace">editor.js</text>
+
+                  <!-- Code Lines with Syntax Coloring -->
+                  <g transform="translate(150, 80)">
+                    <text x="0" y="0" fill="#555" font-size="10" font-family="monospace">01</text>
+                    <text x="25" y="0" font-size="10" font-family="monospace" style="fill:var(--orange)">const</text>
+                    <text x="65" y="0" font-size="10" font-family="monospace" style="fill:var(--mustard)">theme</text>
+                    <text x="110" y="0" fill="#ece4d3" font-size="10" font-family="monospace">= {</text>
+
+                    <text x="0" y="20" fill="#555" font-size="10" font-family="monospace">02</text>
+                    <text x="25" y="20" font-size="10" font-family="monospace" style="fill:var(--teal)">  accentColor:</text>
+                    <text x="125" y="20" font-size="10" font-family="monospace" style="fill:var(--mustard)">'#ff5a1f'</text>
+                    <text x="195" y="20" fill="#ece4d3" font-size="10" font-family="monospace">,</text>
+
+                    <text x="0" y="40" fill="#555" font-size="10" font-family="monospace">03</text>
+                    <text x="25" y="40" font-size="10" font-family="monospace" style="fill:var(--teal)">  customUI:</text>
+                    <text x="110" y="40" font-size="10" font-family="monospace" style="fill:var(--orange)">true</text>
+
+                    <text x="0" y="60" fill="#555" font-size="10" font-family="monospace">04</text>
+                    <text x="25" y="60" fill="#ece4d3" font-size="10" font-family="monospace">};</text>
+
+                    <text x="0" y="85" fill="#555" font-size="10" font-family="monospace">05</text>
+                    <text x="25" y="85" font-size="10" font-family="monospace" style="fill:var(--orange)">renderEditor</text>
+                    <text x="110" y="85" fill="#ece4d3" font-size="10" font-family="monospace">(theme);</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">UI Clone</span>
+              </div>
+              <h3 class="project-title">VS Code-Style Editor UI Clone</h3>
+              <p class="project-desc">
+                A custom VS Code editor user interface clone with custom accent color theming, built from scratch with clean semantic HTML, modular CSS, and responsive JavaScript.
+              </p>
+              <div class="project-footer">
+                <a href="https://github.com/HAPPY3058K" target="_blank" rel="noopener noreferrer" class="btn-project-link" data-cursor="GITHUB">
+                  <span>View on GitHub</span>
+                  <span class="link-arrow">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: This Portfolio -->
+          <article class="project-card" data-cursor="VIEW DROP">
+            <div class="project-card-header">
+              <span class="card-edition">RELEASE 03 // 2026</span>
+              <span class="card-status active">SEMESTER 1</span>
+            </div>
+
+            <!-- Inline SVG / Pure CSS Visual -->
+            <div class="project-visual-box">
+              <div class="visual-unmask-container">
+                <svg class="project-svg-visual" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="400" height="240" fill="#141311"/>
+                  
+                  <!-- Retro Sports Sneaker Shoebox Vector Graphic -->
+                  <g transform="translate(200, 120)">
+                    <!-- Isometric Box Vector -->
+                    <polygon points="-90,-20 0,-70 90,-20 0,30" fill="#1c1a17" stroke-width="1.5" style="stroke:var(--orange)"/>
+                    <polygon points="-90,-20 0,30 0,85 -90,35" fill="#161513" stroke-width="1.5" style="stroke:var(--orange)"/>
+                    <polygon points="0,30 90,-20 90,35 0,85" fill="#0e0d0c" stroke-width="1.5" style="stroke:var(--orange)"/>
+
+                    <!-- Retro lid stripes -->
+                    <line x1="-35" y1="-50" x2="35" y2="-10" stroke-width="4" style="stroke:var(--orange)"/>
+                    <line x1="-25" y1="-55" x2="45" y2="-15" stroke-width="4" style="stroke:var(--mustard)"/>
+                    <line x1="-15" y1="-60" x2="55" y2="-20" stroke="#4a3728" stroke-width="4"/>
+                    <line x1="-5" y1="-65" x2="65" y2="-25" stroke-width="4" style="stroke:var(--teal)"/>
+
+                    <!-- Badges -->
+                    <rect x="-135" y="-95" width="85" height="22" rx="2" style="fill:var(--orange)"/>
+                    <text x="-92" y="-80" fill="#0e0d0c" font-size="9" font-family="'Anton', sans-serif" text-anchor="middle">AI-ASSISTED</text>
+
+                    <rect x="50" y="-95" width="85" height="22" rx="2" fill="#1c1a17" stroke-width="1" style="stroke:var(--teal)"/>
+                    <text x="92" y="-80" font-size="9" font-family="'Anton', sans-serif" text-anchor="middle" style="fill:var(--teal)">RETRO DROP</text>
+                  </g>
+
+                  <!-- Technical typography at bottom -->
+                  <text x="200" y="215" fill="#ece4d3" font-size="11" font-family="'Anton', sans-serif" letter-spacing="2" text-anchor="middle">RR // PERSONAL PORTFOLIO WEBSITE</text>
+                </svg>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="project-tag">HTML + CSS + JS</span>
+                <span class="project-tag">AI-Assisted</span>
+                <span class="project-tag">GitHub</span>
+                <span class="project-tag">Vercel</span>
+              </div>
+              <h3 class="project-title">Personal Portfolio Website</h3>
+              <p class="project-desc">
+                My personal portfolio website built with AI assistance, version-controlled and hosted on GitHub, and deployed with Vercel featuring retro sneaker-drop aesthetics.
+              </p>
+              <div class="project-footer">
+                <a href="https://github.com/HAPPY3058K" target="_blank" rel="noopener noreferrer" class="btn-project-link" data-cursor="GITHUB">
+                  <span>View Repository</span>
+                  <span class="link-arrow">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: Next Drop Teaser -->
+          <article class="project-card teaser-card" data-cursor="LOCKED">
+            <div class="project-card-header">
+              <span class="card-edition highlight-mustard">DROP 04 // UPCOMING</span>
+              <span class="card-status locked">COMING SOON</span>
+            </div>
+
+            <!-- Inline SVG / Pure CSS Visual -->
+            <div class="project-visual-box teaser-visual">
+              <div class="visual-unmask-container">
+                <svg class="project-svg-visual" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="400" height="240" fill="#100f0e"/>
+                  
+                  <!-- Caution / Drop Crate Grid Lines -->
+                  <line x1="0" y1="0" x2="400" y2="240" stroke="#2a2724" stroke-width="1" stroke-dasharray="6,6"/>
+                  <line x1="400" y1="0" x2="0" y2="240" stroke="#2a2724" stroke-width="1" stroke-dasharray="6,6"/>
+
+                  <!-- Lock / Vault Symbol -->
+                  <g transform="translate(200, 110)">
+                    <circle cx="0" cy="0" r="45" fill="#181614" stroke-width="1.5" stroke-dasharray="4,4" style="stroke:var(--mustard)"/>
+                    <!-- Lock shackle -->
+                    <path d="M -14 -5 V -20 C -14 -28 14 -28 14 -20 V -5" fill="none" stroke-width="3" style="stroke:var(--mustard)"/>
+                    <!-- Lock body -->
+                    <rect x="-20" y="-5" width="40" height="30" rx="3" style="fill:var(--mustard)"/>
+                    <circle cx="0" cy="8" r="3" fill="#0e0d0c"/>
+                    <line x1="0" y1="10" x2="0" y2="17" stroke="#0e0d0c" stroke-width="2"/>
+                  </g>
+
+                  <text x="200" y="195" font-size="13" font-family="'Anton', sans-serif" letter-spacing="3" text-anchor="middle" style="fill:var(--mustard)">DROP VAULT LOCKED</text>
+                  <text x="200" y="215" fill="#8d877c" font-size="9" font-family="'DM Sans', sans-serif" text-anchor="middle">INCUBATION // COMING IN SEMESTER 02</text>
+                </svg>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="project-tag">Teaser Card</span>
+                <span class="project-tag">Semester 2</span>
+                <span class="project-tag">Planned</span>
+              </div>
+              <h3 class="project-title">Next drop, coming soon</h3>
+              <p class="project-desc">
+                New interactive web projects, experimental 3D visuals, and hackathon submissions planned for Semester 2. Stay tuned for the upcoming drop.
+              </p>
+              <div class="project-footer">
+                <span class="teaser-label">
+                  <span class="pulse-indicator"></span>
+                  <span>Not a real project yet &bull; Coming Soon</span>
+                </span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+        </div><!-- /projects-sticky -->
+      </div>
+    </section>
+
+    <!-- 6. CERTIFICATIONS / ACHIEVEMENTS SECTION (Exact Title: "Certifications / Achievements") -->
+    <section id="achievements" class="achievements-section">
+      <div class="section-container">
+        <div class="section-header-row">
+          <div class="section-tag">06 // MILESTONES</div>
+          <h2 class="section-title">Certifications / Achievements</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="achievements-grid">
+          <!-- Achievement Card 1 -->
+          <div class="achievement-card" data-cursor="AWARD">
+            <div class="card-stamp">MILESTONE // #01</div>
+            <div class="card-icon-badge">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="2" style="stroke:var(--orange)">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div class="achievement-content">
+              <span class="achieve-date">SEMESTER 1 // 2026</span>
+              <h3 class="achieve-title">Built and deployed my first portfolio website</h3>
+              <p class="achieve-desc">
+                Engineered from the ground up, utilizing modern semantic web technologies, Git version control, GitHub repository hosting, and live Vercel continuous deployment.
+              </p>
+              <div class="achieve-badge-row">
+                <span class="achieve-badge">GitHub Deployed</span>
+                <span class="achieve-badge">Vercel Live</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievement Card 2 -->
+          <div class="achievement-card" data-cursor="AWARD">
+            <div class="card-stamp">MILESTONE // #02</div>
+            <div class="card-icon-badge">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="2" style="stroke:var(--teal)">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <div class="achievement-content">
+              <span class="achieve-date">SEMESTER 1 // 2026</span>
+              <h3 class="achieve-title">Completed two interactive web projects in Semester 1</h3>
+              <p class="achieve-desc">
+                Built Food World 3D (an interactive AgriTech 3D visualization) and the VS Code-style editor UI clone during my first semester in B.Tech CSE.
+              </p>
+              <div class="achieve-badge-row">
+                <span class="achieve-badge">Food World 3D</span>
+                <span class="achieve-badge">Editor UI Clone</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievement Card 3: Teaser card -->
+          <div class="achievement-card placeholder-card" data-cursor="SOON">
+            <div class="card-stamp">QUEUE // #03</div>
+            <div class="card-icon-badge">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="2" style="stroke:var(--mustard)">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="achievement-content">
+              <span class="achieve-date highlight-mustard">IN PROGRESS</span>
+              <h3 class="achieve-title">More certificates coming soon</h3>
+              <p class="achieve-desc">
+                Currently studying Digital Data &amp; AI Literacy. Aiming for hackathons, tech clubs and certifications in the coming semesters.
+              </p>
+              <div class="achieve-badge-row">
+                <span class="achieve-badge">Semester 2 Roadmap</span>
+                <span class="achieve-badge">Hackathons Ahead</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+      <div class="section-container">
+        <div class="section-header-row">
+          <div class="section-tag">07 // GET IN TOUCH</div>
+          <h2 class="section-title">Contact</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="contact-box">
+          <div class="contact-badge-header">
+            <span>DIRECT CHANNEL // OPEN FOR OPPORTUNITIES</span>
+            <span>JAIPUR, INDIA &bull; JECRC UNIVERSITY</span>
+          </div>
+
+          <div class="contact-main">
+            <p class="contact-sub">Have a hackathon project, internship opportunity, or tech club collaboration? Let's connect.</p>
+            
+            <!-- Big Email Link with animated underline -->
+            <div class="email-link-wrap">
+              <a href="mailto:roserajveer2008@gmail.com" class="big-email-link" data-cursor="MAIL">
+                <span class="email-text">roserajveer2008@gmail.com</span>
+                <span class="email-underline" aria-hidden="true"></span>
+              </a>
+            </div>
+
+            <!-- Copy Email Button with Confirmation -->
+            <div class="contact-btn-row">
+              <button id="copy-email-btn" class="btn-snkrs btn-primary btn-magnetic" data-email="roserajveer2008@gmail.com" data-cursor="COPY">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span id="copy-btn-text">Copy email</span>
+              </button>
+
+              <a href="mailto:roserajveer2008@gmail.com" class="btn-snkrs btn-outline btn-magnetic" data-cursor="SEND">
+                <span>Send Email</span>
+                <span class="btn-arrow">&rarr;</span>
+              </a>
+            </div>
+
+            <!-- Confirmation message placeholder -->
+            <div id="copy-feedback" class="copy-feedback" aria-live="polite"></div>
+          </div>
+
+          <!-- GitHub and LinkedIn Links in Contact Section -->
+          <div class="contact-social-channels">
+            <span class="channels-title">ONLINE PROFILES:</span>
+            <div class="channels-list">
+              <a href="https://github.com/HAPPY3058K" target="_blank" rel="noopener noreferrer" class="channel-card" data-cursor="GITHUB">
+                <div class="channel-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </div>
+                <div class="channel-info">
+                  <span class="channel-name">GitHub</span>
+                  <span class="channel-handle">github.com/HAPPY3058K</span>
+                </div>
+                <span class="channel-arrow">&rarr;</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/rajveer-rose-124809412" target="_blank" rel="noopener noreferrer" class="channel-card" data-cursor="LINKEDIN">
+                <div class="channel-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </div>
+                <div class="channel-info">
+                  <span class="channel-name">LinkedIn</span>
+                  <span class="channel-handle">linkedin.com/in/rajveer-rose-124809412</span>
+                </div>
+                <span class="channel-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer (GitHub and LinkedIn required in footer) -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top-row">
+        <div class="footer-brand">
+          <span class="footer-logo">RAJVEER ROSE</span>
+          <p class="footer-caption">B.Tech Computer Science &amp; Engineering &bull; JECRC University, Jaipur</p>
+        </div>
+        <div class="footer-links-group">
+          <span class="footer-group-title">QUICK LINKS</span>
+          <ul class="footer-nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Certifications / Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <span class="footer-group-title">CONNECT</span>
+          <ul class="footer-social-list">
+            <li>
+              <a href="https://github.com/HAPPY3058K" target="_blank" rel="noopener noreferrer">
+                <span>GitHub</span>
+                <span class="footer-ext">&rarr;</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/rajveer-rose-124809412" target="_blank" rel="noopener noreferrer">
+                <span>LinkedIn</span>
+                <span class="footer-ext">&rarr;</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:roserajveer2008@gmail.com">
+                <span>roserajveer2008@gmail.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div class="footer-copy">
+          &copy; 2026 Rajveer Rose. All rights reserved. Built with modern web standards.
+        </div>
+        <div class="footer-motto">
+          <span>JUST SHIP IT.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Colorway picker: changes the accent colors of the whole site -->
+  <div class="colorway-picker" role="group" aria-label="Choose a colorway">
+    <span class="colorway-label">COLORWAY</span>
+    <button type="button" class="colorway-swatch" data-colorway="classic" aria-label="Classic orange" aria-pressed="true" style="background:#ff5a1f"></button>
+    <button type="button" class="colorway-swatch" data-colorway="teal" aria-label="Teal pop" aria-pressed="false" style="background:#1fa39a"></button>
+    <button type="button" class="colorway-swatch" data-colorway="sunset" aria-label="Sunset red" aria-pressed="false" style="background:#e63b2e"></button>
+    <button type="button" class="colorway-swatch" data-colorway="ice" aria-label="Ice blue" aria-pressed="false" style="background:#4cc9ff"></button>
+  </div>
+
+  <!-- Empty chatbot placeholder for Botpress (Required) -->
+  <div id="chatbot"></div>
+
+  <!-- Relative script link -->
+  <script src="script.js"></script>
+</body>
+</html>
